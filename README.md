@@ -1,4 +1,4 @@
-Product Developers :Kalema Arnold & Melody Nsita
+Product Developers :Kalema Arnold and Melody Nsita
 Product Manager :Andrew Tugume
 # Next.js Commerce
 
