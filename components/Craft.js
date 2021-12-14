@@ -72,11 +72,10 @@ export default function Craft({ photos }) {
             <div key={i} className={i === imageIndex ? styles.activeSlide : styles.slide}>
               <a>
                 <div className={styles.img}>
-                  {/* <img alt={photo.alt} src={photo.src} /> */}
-
                   <Image
                     alt={photo.title}
-                    src={`https://qraftstore.herokuapp.com${photo.file.formats.small.url}`}
+                    // src={`https://qraftstore.herokuapp.com${photo.file.formats.small.url}`}
+                    src={`http://localhost:1337/api/qraftstores?populate=*${photo.file.formats.small.url}`}
                     width={photo.file.formats.small.width}
                     height={photo.file.formats.small.height}
                   />

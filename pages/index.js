@@ -6,8 +6,10 @@ import axios from 'axios'
 
 //fetch data from db
 export async function getStaticProps() {
-  const res = await axios.get("https://qraftstore.herokuapp.com/qraftstores");
+  // const res = await axios.get("https://qraftstore.herokuapp.com/api/qraftstores?populate=*");
+  const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
   const photos = await res.data;
+  console.log(photos);
 
   return {
     props: { photos }
