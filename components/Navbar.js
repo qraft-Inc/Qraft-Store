@@ -40,21 +40,19 @@ export default function Navbar() {
                     {/* logo */}
                     <div className="flex items-center">
                         <div>
-                        <Link href="http://localhost:3000/"><a><Image src="/img/logo.png" alt="Qraft Academy" layout="fixed" width={90} height={62} /></a></Link>
+                            <Link href="http://localhost:3000/"><a><Image src="https://res.cloudinary.com/dwa3soopc/image/upload/v1618146785/qraft%20/Artboard_4_copy_6_cxz4qt.png" alt="Qraft Academy" layout="fixed" width={90} height={62} /></a></Link>
                         </div>
                         {user && <Link href="#"><a className=" ml-4 hidden lg:flex hover:border-b-2 border-blue-400">Dashboard</a></Link>}
                     </div>
                     {/* primary nav*/}
                     <div className="flex space-x-10 items-center">
                         <div className="hidden lg:flex space-x-10">
-                            <Link href="https://www.qraftstore.com"><a className="hover:border-b-2 border-blue-400 py-1 ">Home</a></Link>
+                            <Link href="http://localhost:3000/"><a className="hover:border-b-2 border-blue-400 py-1 ">Home</a></Link>
                             <Link href="https://www.qraftstore.com/about"><a className="hover:border-b-2 border-blue-400 py-1">About Us</a></Link>
-                            <Link href="https://www.qraftstore.com/tracks"><a className="hover:border-b-2 border-blue-400 py-1">Tracks</a></Link>
-                            <Link href="https://www.qraftstore.com/careers"><a className="hover:border-b-2 border-blue-400 py-1">Careers</a></Link>
-                            <Link href="https://www.qraftstore.com/contact"><a className="hover:border-b-2 border-blue-400 py-1">Contact Us</a></Link>
+                            <Link href="https://www.qraftstore.com/tracks"><a className="hover:border-b-2 border-blue-400 py-1">Contact Us</a></Link>
                             {/* <Link href="https://www.qraftstore.com/gallery"><a className="hover:border-b-2 border-blue-400 
                             py-1">Gallery</a></Link> */}
-                               <Link href="http://localhost:3000/gallery"><a className="hover:border-b-2 border-blue-400 
+                            <Link href="http://localhost:3000/gallery"><a className="hover:border-b-2 border-blue-400 
                             py-1">Gallery</a></Link>
                             <Link href="https://www.qraftstore.com/cart"><a className=""> <BsFillCartFill size="2rem" /></a></Link>
                             {!user && <Link href="/api/auth/login"><a className="rounded-lg bg-[#4092CF] text-base px-3 py-2 hover:bg-blue-400 transition duration-300">Login/Signup</a></Link>}
@@ -97,8 +95,6 @@ export default function Navbar() {
                         )}
                         <Link href="https://www.qraftstore.com"><a className="border-b">Home</a></Link>
                         <Link href="https://www.qraftstore.com/about"><a className="border-b">About Us</a></Link>
-                        <Link href="https://www.qraftstore.com/tracks"><a className="border-b">Tracks</a></Link>
-                        <Link href="https://www.qraftstore.com/careers"><a className="border-b">Careers</a></Link>
                         <Link href="https://www.qraftstore.com/contact"><a className="border-b">Contact Us</a></Link>
                         <Link href="https://www.qraftstore.com/contact"><a className="border-b">Gallery</a></Link>
                         {!user && <Link href="/api/auth/login"><a className="border-b">Login/Signup</a></Link>}

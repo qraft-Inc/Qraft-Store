@@ -7,13 +7,13 @@ import {AiFillInstagram} from "react-icons/ai"
 import {AiFillYoutube} from "react-icons/ai"
 
 
-const Footer = () => {
+export default function Footer(){
   return (
     <footer className="bg-black bottom-0 left-0 right-0 text-xs">
       
         <ul className="grid grid-cols-3 p-8 md:grid-cols-6 gap-5 md:gap-0">
           <li className="flex items-center">
-            <Link href="/"><a><Image src="/img/logo.png" width={90} height={62} /></a></Link>
+            <Link href="/"><a><Image src="https://res.cloudinary.com/dwa3soopc/image/upload/v1618146785/qraft%20/Artboard_4_copy_6_cxz4qt.png" width={90} height={62} /></a></Link>
           </li>
 
           <li className="flex flex-col">
@@ -62,5 +62,4 @@ const Footer = () => {
   );
 }
 
-export default Footer;
 

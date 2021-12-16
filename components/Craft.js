@@ -10,6 +10,8 @@ import Link from "next/link";
 
 
 export default function Craft({ photos }) {
+  console.log(photos)
+  
   const NextArrow = ({ onClick }) => {
     return (
       <div className={`${styles.arrow} ${styles.next}`} onClick={onClick}>
@@ -66,7 +68,7 @@ export default function Craft({ photos }) {
   };
   return (
     <>
-      <section className="xl:container md:mx-auto	mt-14 pb-0 md:pt-20 md:pb-4" id="courses">
+      {/* <section className="xl:container md:mx-auto	mt-14 pb-0 md:pt-20 md:pb-4" id="courses">
         <Slider {...settings}>
           {photos.map((photo, i) => (
             <div key={i} className={i === imageIndex ? styles.activeSlide : styles.slide}>
@@ -74,7 +76,6 @@ export default function Craft({ photos }) {
                 <div className={styles.img}>
                   <Image
                     alt={photo.title}
-                    // src={`https://qraftstore.herokuapp.com${photo.file.formats.small.url}`}
                     src={`http://localhost:1337/api/qraftstores?populate=*${photo.file.formats.small.url}`}
                     width={photo.file.formats.small.width}
                     height={photo.file.formats.small.height}
@@ -86,7 +87,7 @@ export default function Craft({ photos }) {
 
           ))}
         </Slider>
-      </section>
+      </section> */}
     </>
   );
 }
