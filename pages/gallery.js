@@ -38,11 +38,10 @@ export default function Gallery({ photos}) {
                                 <a>
                                     <img
                                         alt={photo.attributes.title}
-                                        src={`https://qraftstore.herokuapp.com ${photo.attributes.file.attributes.formats.medium.url}`}
-                                        // src={photo.attributes.file.data.attributes.formats.medium.url}
-                                        // width={photo.attributes.file.width}
-                                        // height={photo.attributes.file.height}
-                                        layout='fill'
+                                        src={`https://qraftstore.herokuapp.com/${photo.attributes.url}`}
+                                        // src={photo.attributes.url}
+                                        width={photo.attributes.width}
+                                        height={photo.attributes.height}
                                     />
                                 </a>
                             </Link>
