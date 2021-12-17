@@ -13,17 +13,15 @@ export async function getStaticProps() {
     return {
         props: { photos }
     }
+  
 }
 
-//   format money with commas
-// function formatMoney(n) {
-//     return "shs " + (Math.round(n * 100) / 100).toLocaleString();
-// }
-
+  //    format money with commas
+function formatMoney(n) {
+    return "shs " + (Math.round(n * 100) / 100).toLocaleString();
+}
 
 export default function Gallery({ photos}) {
-
-console.log(photos.data)
 
     return (
         <>
@@ -35,24 +33,25 @@ console.log(photos.data)
                 <h1 className="font-black text-center text-sm md:text-2xl">SEE MORE ORIGINAL PAINTINGS FOR SALE</h1>
                 <div className="grid md:grid-cols-4 gap-4 sm:grid-cols-3">
                     {photos.map(photo => (
-                        <div key={photo._id} className="flex flex-col">
-                            <Link href={`gallery/${photo._id}`}>
+                        <div key={photo.id} className="flex flex-col">
+                            <Link href={`gallery/${photo.id}`}>
                                 <a>
-                                    <Image
-                                        alt={photo.title}
-                                        src={`https://qraftstore.herokuapp.com${file.data.attributes.formats.medium.url}`}
-                                        width={photo.file.formats.medium.width}
-                                        height={photo.file.formats.medium.height}
+                                    <img
+                                        alt={photo.attributes.title}
+                                        src={`https://qraftstore.herokuapp.com ${photo.attributes.file.attributes.formats.medium.url}`}
+                                        // src={photo.attributes.file.data.attributes.formats.medium.url}
+                                        // width={photo.attributes.file.width}
+                                        // height={photo.attributes.file.height}
+                                        layout='fill'
                                     />
                                 </a>
                             </Link>
                             <div className="flex justify-between px-4 font-semibold">
                                 <div className="flex flex-col">
-                                    <h2>{photo.title}</h2>
-                                    <span>{photo.size}</span>
+                                    <h2>{photo.attributes.title}</h2>
+                                    <span>{photo.attributes.size}</span>
                                 </div>
-                                <span>{photo.price}</span>
-                                {/* <span>{formatMoney(photo.price)}</span> */}
+                                <span>{formatMoney(photo.attributes.price)}</span>
                             </div>
 
                         </div>
