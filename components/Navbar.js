@@ -96,7 +96,8 @@ export default function Navbar() {
                         <Link href="https://www.qraftstore.com"><a className="border-b">Home</a></Link>
                         <Link href="https://www.qraftstore.com/about"><a className="border-b">About Us</a></Link>
                         <Link href="https://www.qraftstore.com/contact"><a className="border-b">Contact Us</a></Link>
-                        <Link href="https://www.qraftstore.com/contact"><a className="border-b">Gallery</a></Link>
+                        {/* <Link href="https://www.qraftstore.com/gallery"><a className="border-b">Gallery</a></Link> */}
+                        <Link href="http://localhost:3000/gallery"><a className="border-b">Gallery</a></Link>
                         {!user && <Link href="/api/auth/login"><a className="border-b">Login/Signup</a></Link>}
                         {user && <Link href="/api/auth/logout"><a className="border-b">Logout</a></Link>}
                     </div>

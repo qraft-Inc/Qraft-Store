@@ -7,8 +7,8 @@ import axios from 'axios';
 
 
 export async function getStaticProps() {
-    const res = await axios.get("https://qraftstore.herokuapp.com/qraftstores");
-    const photos = await res.data;
+    const res = await axios.get("https://qraftstore.herokuapp.com/api/qraftstores?populate=*");
+    const photos = await res.data.data;
 
     return {
         props: { photos }
@@ -16,13 +16,14 @@ export async function getStaticProps() {
 }
 
 //   format money with commas
-function formatMoney(n) {
-    return "shs " + (Math.round(n * 100) / 100).toLocaleString();
-}
+// function formatMoney(n) {
+//     return "shs " + (Math.round(n * 100) / 100).toLocaleString();
+// }
 
 
-export default function Gallery({ photos }) {
+export default function Gallery({ photos}) {
 
+console.log(photos.data)
 
     return (
         <>
@@ -39,7 +40,7 @@ export default function Gallery({ photos }) {
                                 <a>
                                     <Image
                                         alt={photo.title}
-                                        src={`https://qraftstore.herokuapp.com${photo.file.formats.medium.url}`}
+                                        src={`https://qraftstore.herokuapp.com${file.data.attributes.formats.medium.url}`}
                                         width={photo.file.formats.medium.width}
                                         height={photo.file.formats.medium.height}
                                     />
@@ -50,7 +51,8 @@ export default function Gallery({ photos }) {
                                     <h2>{photo.title}</h2>
                                     <span>{photo.size}</span>
                                 </div>
-                                <span>{formatMoney(photo.price)}</span>
+                                <span>{photo.price}</span>
+                                {/* <span>{formatMoney(photo.price)}</span> */}
                             </div>
 
                         </div>

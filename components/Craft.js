@@ -10,7 +10,6 @@ import Link from "next/link";
 
 
 export default function Craft({ photos }) {
-  console.log(photos)
   
   const NextArrow = ({ onClick }) => {
     return (
