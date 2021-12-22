@@ -3,25 +3,36 @@ import Head from "next/head";
 // import data from "../public/data.json"
 import Image from "next/image";
 import Link from "next/link";
-import axios from 'axios';
+// import axios from 'axios';
+import { ApolloClient, InMemoryCache } from '@apollo/client'
+import { GET_ALL_QUERIES } from '.././graphql/queries'
+
 
 
 export async function getStaticProps() {
-    const res = await axios.get("https://qraftstore.herokuapp.com/api/qraftstores?populate=*");
-    const photos = await res.data.data;
+    // const res = await axios.get("https://qraftstore.herokuapp.com/api/qraftstores?populate=*");
+    // const photos = await res.data.data;
+    const client = new ApolloClient({
+        uri: process.env.STRAPI_GRAPHQL_API,
+        cache: new InMemoryCache()
+    });
+    const { data } = await client.query({
+        query: GET_ALL_QUERIES
+    })
 
     return {
-        props: { photos }
+        props: { photos: data.qraftstores.data }
     }
-  
+
 }
 
-  //    format money with commas
+//    format money with commas
 function formatMoney(n) {
     return "shs " + (Math.round(n * 100) / 100).toLocaleString();
 }
 
-export default function Gallery({ photos}) {
+export default function Gallery({ photos }) {
+    console.log('photos', photos)
 
     return (
         <>
@@ -36,12 +47,12 @@ export default function Gallery({ photos}) {
                         <div key={photo.id} className="flex flex-col">
                             <Link href={`gallery/${photo.id}`}>
                                 <a>
-                                    <img
+                                    <Image
                                         alt={photo.attributes.title}
-                                        src={`https://qraftstore.herokuapp.com/${photo.attributes.url}`}
-                                        // src={photo.attributes.url}
-                                        width={photo.attributes.width}
-                                        height={photo.attributes.height}
+                                        src={`http://localhost:1337/${photo.url}`}
+                                        width={photo.width}
+                                        height={photo.height}
+                                        
                                     />
                                 </a>
                             </Link>
