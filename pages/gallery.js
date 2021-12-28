@@ -3,25 +3,16 @@ import Head from "next/head";
 // import data from "../public/data.json"
 import Image from "next/image";
 import Link from "next/link";
-// import axios from 'axios';
-import { ApolloClient, InMemoryCache } from '@apollo/client'
-import { GET_ALL_QUERIES } from '.././graphql/queries'
-
+import axios from 'axios';
 
 
 export async function getStaticProps() {
     // const res = await axios.get("https://qraftstore.herokuapp.com/api/qraftstores?populate=*");
-    // const photos = await res.data.data;
-    const client = new ApolloClient({
-        uri: process.env.STRAPI_GRAPHQL_API,
-        cache: new InMemoryCache()
-    });
-    const { data } = await client.query({
-        query: GET_ALL_QUERIES
-    })
+    const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
+    const photos = await res.data.data;
 
     return {
-        props: { photos: data.qraftstores.data }
+        props: { photos}
     }
 
 }
@@ -49,11 +40,14 @@ export default function Gallery({ photos }) {
                                 <a>
                                     <Image
                                         alt={photo.attributes.title}
-                                        src={`http://localhost:1337/${photo.url}`}
-                                        width={photo.width}
-                                        height={photo.height}
-                                        
+                                        src={photo.attributes?.file?.data?.attributes?.formats?.medium?.url}
+                                        // width={photo.attributes?.file?.data?.attributes?.formats?.medium?.width}
+                                        // height={photo.attributes?.file?.data?.attributes?.formats?.medium?.height}
+                                        layout='fill'
                                     />
+                                         {/* <img
+                                         src={photo.attributes?.file?.data?.attributes?.formats?.medium?.url}
+                                         /> */}
                                 </a>
                             </Link>
                             <div className="flex justify-between px-4 font-semibold">

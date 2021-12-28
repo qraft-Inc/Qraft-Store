@@ -2,27 +2,27 @@ import Head from 'next/head'
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 import Craft from "../components/Craft";
-// import axios from 'axios'
+import axios from 'axios'
 import { ApolloClient, InMemoryCache } from '@apollo/client'
 import { GET_ALL_QUERIES } from '.././graphql/queries'
 
 //fetch data from db
 export async function getStaticProps() {
-  // const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
+  const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
   // const res = await axios.get("https://qraftstore.herokuapp.com/api/qraftstores?populate=*");
-  // const photos = await res.data;
+  const photos = await res.data;
 
-  const client = new ApolloClient({
-    uri: STRAPI_GRAPHQL_API,
-    cache: new InMemoryCache()
-  });
-  const { data } = await client.query({
-    query: GET_ALL_QUERIES
-  })
+  // const client = new ApolloClient({
+  //   uri: STRAPI_GRAPHQL_API,
+  //   cache: new InMemoryCache()
+  // });
+  // const { data } = await client.query({
+  //   query: GET_ALL_QUERIES
+  // })
 
   return {
     props: {
-      photos: data.qraftstores.data
+      photos
     }
   }
 }

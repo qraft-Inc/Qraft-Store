@@ -51,7 +51,7 @@ export default function Details({ photo }) {
             </Head>
             <div className="h-auto mt-32 space-y-28">
                 <div className="md:grid md:grid-cols-3 md:container md:mx-auto pb-32">
-                    <div className="flex  justify-center md:col-span-2">
+                    <div className="flex justify-center md:col-span-2">
                         <Image
                             src={`https://qraftstore.herokuapp.com${photo.file.formats.small.url}`}
                             width={photo.file.formats.small.width}
