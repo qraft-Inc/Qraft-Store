@@ -1,49 +1,40 @@
-import Image from "next/image";
+import React from "react";
+import Head from "next/head";
 import Link from "next/link";
-import {AiFillTwitterSquare} from "react-icons/ai";
-import {AiFillFacebook} from "react-icons/ai";
-import {AiFillInstagram} from "react-icons/ai";
-import {AiFillLinkedin} from "react-icons/ai";
-import {FcLike} from "react-icons/fc";
-import {AiFillEye} from "react-icons/ai";
 
-export default function Artists() {
-    return (
+//    format money with commas
+function formatMoney(n) {
+  return "shs " + (Math.round(n * 100) / 100).toLocaleString();
+}
 
-        <div className="mb-6 pb-4 px-6 sm:px-9">
-                <div className=" mt-6 grid gap-y-6 md:grid-cols-4 md:gap-x-10  sm:grid-cols-2 sm:gap-10 ">
-                {
-                    data.map(mentor => (
-                        <div key={mentor.id} className="flex justify-center">
-                            <div>
-                                <div className="flex justify-center">
-                                    <Image 
-                                            src={mentor.courseImg} alt={mentor.altText} 
-                                            width={250}
-                                            height={250}
-                                            quality={100}
-                                            className="flex justify-center"
-                                        />
-                                </div>
-                                <div className="flex flex-col justify-center p-2">
-                                    <h3 className="text-xl text-gray-700 font-medium flex justify-center mb-0">{mentor.name}</h3>
-                                    <h3 className="text-medium font-semibold flex text-blue-900 justify-center mt-2">{mentor.role}</h3>
-                                    <ul className=" flex justify-center w-full mt-2">
-                                        <li className="text-blue-600"> 
-                                            <Link href="#"> 
-                                                <a className="text-2xl">
-                                                    <AiFillLinkedin className="mr-1" ></AiFillLinkedin>
-                                                </a>
-                                            </Link> 
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                    </div>
-                    ))
-                }
+export default function Artist({ photos }) {
+
+  return (
+    <>
+      <div className="h-auto container mx-auto mt-20 md:space-y-8 md:mt-8 md:mb-8">
+        <div className="grid md:grid-cols-4 gap-4 sm:grid-cols-3">
+          {photos.map((photo) => (
+            <div key={photo.id} className="flex flex-col">
+              <Link href={`gallery/${photo.id}`}>
+                <a>
+                  <img
+                    src={
+                      photo.attributes?.file?.data?.attributes?.formats?.medium
+                        ?.url
+                    }
+                  />
+                </a>
+              </Link>
+              <div className="flex justify-between px-4 font-semibold">
+                <div className="flex flex-col">
+                  <h2>{photo.attributes.title}</h2>
+                </div>
+                <span>{formatMoney(photo.attributes.price)}</span>
+              </div>
             </div>
+          ))}
         </div>
-
-    )
+      </div>
+    </>
+  );
 }

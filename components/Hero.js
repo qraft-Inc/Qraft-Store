@@ -28,7 +28,7 @@ export default function Hero() {
           Qraft Store is your online destination to find and showcase creative work and marketplace to the world's best design and visual art creatives
           </div>
 
-          <span className="w-full md:w-auto">
+          {/* <span className="w-full md:w-auto">
             <Link
               activeClass="active"
               to="courses"
@@ -40,7 +40,7 @@ export default function Hero() {
               <a className="cursor-pointer inline-flex items-center justify-center w-full px-8 md:px-12 py-4 text-base md:text-lg font-bold leading-6 rounded-full md:w-auto bg-[#4092CF] hover:bg-blue-400 transition duration-300">
                 View Art Work
               </a></Link>
-          </span>
+          </span> */}
         </div>
 
       </header>
