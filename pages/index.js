@@ -3,7 +3,6 @@ import Hero from "../components/Hero";
 // import Layout from "../components/Layout";
 import Artist from "../components/Artists";
 import Designers from "../components/Designers";
-import NavTabs from "../components/NavTabs";
 import axios from 'axios'
 
 
@@ -47,9 +46,8 @@ export default function Home({ photos }) {
       </Head>
 
       <Hero />
-      <NavTabs/>
-      {/* <Artist photos={photos} /> */}
-      {/* <Designers photos={photos} /> */}
+      <Artist photos={photos} />
+      <Designers photos={photos} />
 
     </>
   )

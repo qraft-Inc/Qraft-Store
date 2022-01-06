@@ -19,7 +19,7 @@ export const getStaticPaths = async () => {
 
     const paths = photos.map((photo) => {
         return {
-            params: { id: photo._id }
+            params: { slug: photo._id }
         }
     });
 
@@ -32,7 +32,7 @@ export const getStaticPaths = async () => {
 //fetch single photo that match query params
 export const getStaticProps = async ({ params }) => {
 
-    const res = await axios.get(`https://qraftstore.herokuapp.com/qraftstores/${params.id}`);
+    const res = await axios.get(`https://qraftstore.herokuapp.com/qraftstores/${params.slug}`);
     const photo = await res.data;
 
     return {
@@ -42,7 +42,7 @@ export const getStaticProps = async ({ params }) => {
     }
 }
 
-export default function Details({ photo }) {
+export default function Tracks({ photo }) {
     return (
         <>
             <Head>
@@ -109,4 +109,3 @@ export default function Details({ photo }) {
         </>
     )
 }
-
