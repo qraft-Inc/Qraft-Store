@@ -101,7 +101,7 @@ export default function Navbar() {
               </>
             )}
 
-            {/* toggle button */}
+            {/*TOGGLE BUTTON*/}
             <div className="lg:hidden flex items-center ">
               <button
                 className="toggle-menu-btn"
