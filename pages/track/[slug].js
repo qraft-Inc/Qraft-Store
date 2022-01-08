@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from "next/head";
 import axios from 'axios';
-import cart from "../cart"
 import Link from "next/link";
 
 //    format money with commas
