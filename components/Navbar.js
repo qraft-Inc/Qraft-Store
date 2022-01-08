@@ -86,7 +86,7 @@ export default function Navbar() {
 
             {user && (
               <>
-                {/*secondary nav*/}
+                {/*SECONDARY NAV*/}
                 <div className="flex items-center space-x-1 md:space-x-4">
                   {/* profile picture */}
                   <div className="rounded-full border-2 border-[#4092CF] overflow-hidden w-12 h-12">
