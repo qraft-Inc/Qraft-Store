@@ -14,8 +14,8 @@ export default function Artist({ photos }) {
           {photos.map((photo) => (
             <div className="flex justify-center">
               <div className="  rounded-tr-[190px] shadow-lg bg-white max-w-sm shadow-xl">
-                <div key={photo.id} className="overflow-hidden transform transition-500">
-                  <Link href={`track/${photo.id}`} key={photo._id}>
+                <div className="overflow-hidden transform transition-500">
+                  <Link href={`track/${photo.id}`} key={photo.id}>
                     <a>
                       <img className="rounded-tr-[190px] rounded-bl-[190px] object-cover h-96 w-full "
                         src={photo.attributes?.file?.data?.attributes?.formats?.small?.url} alt="" />

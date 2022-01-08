@@ -40,39 +40,36 @@ export default function Navbar() {
           {/* logo */}
           <div className="flex items-center">
             <div>
-              <Link href="http://localhost:3000/">
+              <Link href="https://www.qraftstore.com/">
                 <a>
                   <Image
                     src="https://res.cloudinary.com/dwa3soopc/image/upload/v1618146785/qraft%20/Artboard_4_copy_6_cxz4qt.png"
                     alt="Qraft Academy"
                     layout="fixed"
                     width={90}
-                    height={62}
+                    height={70}
                   />
                 </a>
               </Link>
             </div>
             {/* {user && <Link href="#"><a className=" ml-4 hidden lg:flex hover:border-b-2 border-blue-400">Dashboard</a></Link>} */}
           </div>
+
           {/* primary nav*/}
           <div className="flex space-x-10 items-center">
             <div className="hidden lg:flex space-x-10">
-              <Link href="http://localhost:3000/">
+              <Link href="https://www.qraftstore.com/">
+              {/* <Link href="http://localhost:3000/"> */}
                 <a className="hover:border-b-2 border-blue-400 py-1 ">Home</a>
               </Link>
-              <Link href="http://localhost:3000/about">
+              <Link href="https://www.qraftstore.com/about">
                 <a className="hover:border-b-2 border-blue-400 py-1">
                   About Us
                 </a>
               </Link>
-              {/* <Link href="https://www.qraftstore.com/contact"><a className="hover:border-b-2 border-blue-400 py-1">Contact Us</a></Link> */}
-              <Link href="http://localhost:3000/contact">
-                <a className="hover:border-b-2 border-blue-400 py-1">
-                  Contact Us
-                </a>
-              </Link>
-
-              <Link href="https://www.qraftstore.com/cart">
+              <Link href="https://www.qraftstore.com/contact">
+                <a className="hover:border-b-2 border-blue-400 py-1">Contact Us</a></Link>
+              <Link href="#">
                 <a className="">
                   {" "}
                   <BsFillCartFill size="2rem" />

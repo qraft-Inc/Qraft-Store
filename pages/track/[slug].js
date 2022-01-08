@@ -13,7 +13,7 @@ function formatMoney(n) {
 // get id param for selected photo
 export const getStaticPaths = async () => {
 
-    const res = await axios.get("https://qraftstore.herokuapp.com/qraftstores?populate=*");
+    const res = await axios.get("https://qraftstore.herokuapp.com/api/qraftstores?populate=*");
     // const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
     const photos = await res.data.data;
     const paths = photos.map((photo) => {
@@ -31,8 +31,8 @@ export const getStaticPaths = async () => {
 //fetch single photo that match query params
 export const getStaticProps = async ({ params }) => {
 
-    // const res = await axios.get(`https://qraftstore.herokuapp.com/api/qraftstores/${params.slug}?&populate=*`);
-    const res = await axios.get(`http://localhost:1337/api/qraftstores/${params.slug}?&populate=*`);
+    const res = await axios.get(`https://qraftstore.herokuapp.com/api/qraftstores/${params.slug}?&populate=*`);
+    // const res = await axios.get(`http://localhost:1337/api/qraftstores/${params.slug}?&populate=*`);
     const photoRes = await res.data.data;
 
     return {
@@ -73,7 +73,7 @@ export default function Tracks({ photo }) {
                                 <span>{photo.attributes.material}</span>
                             </li>
                             <li className="space-x-2">
-                                <Link href="/cart">
+                                <Link href="#">
                                     <a className="bg-black text-white font-bold uppercase text-base px-8 py-3 rounded hover:opacity-80 outline-none focus:outline-none" type="button">Add to cart</a>
                                 </Link>
                             </li>
