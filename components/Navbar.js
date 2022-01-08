@@ -114,7 +114,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* mobile menu */}
+      {/*MOBILE MENU */}
       {isMenuVisible && (
         <div
           className="lg:hidden flex flex-col px-4 space-y-6 pb-4 pt-4 bg-black"
