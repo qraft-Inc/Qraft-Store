@@ -2,23 +2,9 @@ import React from "react";
 import Head from "next/head";
 import Link from "next/link";
 import axios from "axios";
+import { AiFillHeart, AiFillEye } from 'react-icons/ai'
 
 
-//    format money with commas
-function formatMoney(n) {
-  return "shs " + (Math.round(n * 100) / 100).toLocaleString();
-}
-/*
-//fetch data from db
-export async function getStaticProps() {
-  const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
-  const photos = await res.data.data;
-
-  return {
-    props: { photos },
-  };
-}
-*/
 export default function Designers({ photos }) {
 
 
@@ -26,26 +12,31 @@ export default function Designers({ photos }) {
     <>
 
       <div className="h-auto container mx-auto mt-20 md:space-y-8 md:mt-8 md:mb-8">
-      <h1 className="font-black text-center text-sm md:text-2xl mt-24">UX/UI Designers</h1>
+        <h1 className="text-center text-4xl md:text-5xl mt-24 leading-normal font-normal underline underline-offset-8 ">UX/UX Designers</h1>
         <div className="grid md:grid-cols-4 gap-4 sm:grid-cols-3">
           {photos.map((photo) => (
-            <div key={photo.id} className="flex flex-col">
-              <Link href={`gallery/${photo.id}`}>
-                <a>
-                  <img
-                    src={
-                      photo.attributes?.file?.data?.attributes?.formats?.medium
-                        ?.url
-                    }
-                  />
-                </a>
-              </Link>
-              <div className="flex justify-between px-4 font-semibold">
-                <div className="flex flex-col">
-                  <h2>{photo.attributes.title}</h2>
-                  {/* <span>{photo.attributes.size}</span> */}
+            <div className="flex justify-center">
+              <div className="  rounded-tr-[190px] shadow-lg bg-white max-w-sm shadow-xl">
+                <div key={photo.id} className="overflow-hidden">
+                  <Link href={`track/${photo.id}`} key={photo._id}>
+                    <a>
+                      <img className="rounded-tr-[190px] rounded-bl-[190px] object-cover h-96 w-full "
+                        src={photo.attributes?.file?.data?.attributes?.formats?.small?.url} alt="" />
+                    </a>
+                  </Link>
                 </div>
-                <span>{formatMoney(photo.attributes.price)}</span>
+                <div className="flex justify-around items-center mt-2 mb-2 font-semibold">
+                  <div className="flex space-x-2">
+                    <div className="rounded-full overflow-hidden w-8 h-8">
+                      <img src={photo.attributes?.file?.data?.attributes?.formats?.thumbnail?.url} />
+                    </div>
+                    <h2>{photo.attributes.title}</h2>
+                  </div>
+                  <div className="flex space-x-4">
+                    <AiFillHeart className="cursor-pointer hover:fill-[#C22C4E] " />
+                    <AiFillEye className="cursor-pointer hover:fill-[#C22C4E] " />
+                  </div>
+                </div>
               </div>
             </div>
           ))}

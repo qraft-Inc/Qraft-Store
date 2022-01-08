@@ -1,25 +1,25 @@
 import React from 'react'
 import Head from "next/head";
-import Image from "next/image";
 import axios from 'axios';
 // import data from "../../public/data.json"
-import comments from "../../public/comments.json"
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import styles from '../../styles/details.module.css';
 import cart from "../cart"
 import Link from "next/link";
+
+//    format money with commas
+function formatMoney(n) {
+    return "shs " + (Math.round(n * 100) / 100).toLocaleString();
+}
 
 
 // get id param for selected photo
 export const getStaticPaths = async () => {
 
-    const res = await axios.get("https://qraftstore.herokuapp.com/qraftstores");
-    const photos = await res.data;
-
+    // const res = await axios.get("https://qraftstore.herokuapp.com/qraftstores");
+    const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
+    const photos = await res.data.data;
     const paths = photos.map((photo) => {
         return {
-            params: { slug: photo._id }
+            params: { slug: photo.id.toString() }
         }
     });
 
@@ -32,17 +32,19 @@ export const getStaticPaths = async () => {
 //fetch single photo that match query params
 export const getStaticProps = async ({ params }) => {
 
-    const res = await axios.get(`https://qraftstore.herokuapp.com/qraftstores/${params.slug}`);
-    const photo = await res.data;
+    // const res = await axios.get(`https://qraftstore.herokuapp.com/qraftstores/${params.slug}`);
+    const res = await axios.get(`http://localhost:1337/api/qraftstores/${params.slug}?&populate=*`);
+    const photoRes = await res.data.data;
 
     return {
         props: {
-            photo: photo
+            photo: photoRes
         }
     }
 }
 
 export default function Tracks({ photo }) {
+    console.log(photo)
     return (
         <>
             <Head>
@@ -52,26 +54,24 @@ export default function Tracks({ photo }) {
             <div className="h-auto mt-32 space-y-28">
                 <div className="md:grid md:grid-cols-3 md:container md:mx-auto pb-32">
                     <div className="flex justify-center md:col-span-2">
-                        <Image
-                            src={`https://qraftstore.herokuapp.com${photo.file.formats.small.url}`}
-                            width={photo.file.formats.small.width}
-                            height={photo.file.formats.small.height} />
+                        <img className="object-cover"
+                            src={photo.attributes?.file?.data?.attributes?.formats?.medium?.url} alt="" />
                     </div>
 
                     <div>
                         <div className="flex justify-evenly items-center border-b-2 pb-4 border-gray-300">
-                            <h2 className="text-2xl font-bold">{photo.title}</h2>
-                            <span className="text-2xl font-bold">{photo.price}</span>
+                            <h2 className="text-2xl font-bold">{photo.attributes.title}</h2>
+                            <span className="text-2xl font-bold">{formatMoney(photo.attributes.price)}</span>
                         </div>
                         <ul className="flex flex-col space-y-4 pl-16 pt-8 text-xl">
                             <li className="space-x-2">
                                 <label className="text-gray-500">Dimension: </label>
-                                <span>{photo.size}</span>
+                                <span>{photo.attributes.size}</span>
                             </li>
 
                             <li className="space-x-2">
                                 <label className="text-gray-500">Support Or Surface: </label>
-                                <span>{photo.material}</span>
+                                <span>{photo.attributes.material}</span>
                             </li>
                             <li className="space-x-2">
                                 <Link href="/cart">
@@ -83,7 +83,7 @@ export default function Tracks({ photo }) {
 
                 </div >
 
-                <div className="max-w-5xl mx-auto space-y-8">
+                {/* <div className="max-w-5xl mx-auto space-y-8">
                     <h2 className="text-center text-base font-medium">COMMENTS</h2>
                     {comments.map((comment) => (
                         <figure key={comment.id} className="flex space-x-2 items-center ml-44">
@@ -102,7 +102,7 @@ export default function Tracks({ photo }) {
                         <textarea className="w-4/6 mt-1 block w-4/5 border-2 flex items-center outline-none" rows="4"></textarea>
                         <button className="bg-black text-white font-bold text-base px-4 py-3 rounded hover:opacity-80 outline-none focus:outline-none mt-4 mb-8" type="button">Post Comment</button>
                     </div>
-                </div>
+                </div> */}
 
             </div>
 
