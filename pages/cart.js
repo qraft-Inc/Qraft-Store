@@ -1,10 +1,11 @@
+/*
 import React from 'react'
 import Head from "next/head";
 import Image from "next/image";
 import axios from 'axios';
 import { ImBin2 } from 'react-icons/im'
 import Link from "next/link"
-/*
+
 export async function getStaticProps() {
 
     return {
