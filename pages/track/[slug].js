@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from "next/head";
 import axios from 'axios';
-// import data from "../../public/data.json"
 import cart from "../cart"
 import Link from "next/link";
 
@@ -14,8 +13,8 @@ function formatMoney(n) {
 // get id param for selected photo
 export const getStaticPaths = async () => {
 
-    // const res = await axios.get("https://qraftstore.herokuapp.com/qraftstores");
-    const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
+    const res = await axios.get("https://qraftstore.herokuapp.com/qraftstores?populate=*");
+    // const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
     const photos = await res.data.data;
     const paths = photos.map((photo) => {
         return {
@@ -32,7 +31,7 @@ export const getStaticPaths = async () => {
 //fetch single photo that match query params
 export const getStaticProps = async ({ params }) => {
 
-    // const res = await axios.get(`https://qraftstore.herokuapp.com/qraftstores/${params.slug}`);
+    // const res = await axios.get(`https://qraftstore.herokuapp.com/api/qraftstores/${params.slug}?&populate=*`);
     const res = await axios.get(`http://localhost:1337/api/qraftstores/${params.slug}?&populate=*`);
     const photoRes = await res.data.data;
 

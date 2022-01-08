@@ -10,7 +10,7 @@ export default function Hero() {
         <div className=" h-full absolute inset-0 top-14 brightness-50">
           <Image
             alt="Background Image"
-            src="/img/landing.jpg"
+            src="https://res.cloudinary.com/filipe256/image/upload/v1641614037/landing_r08x0x.jpg"
             layout="fill"
             objectFit="cover"
             quality={100}
