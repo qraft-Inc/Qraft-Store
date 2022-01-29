@@ -1,22 +1,9 @@
 import Head from 'next/head'
 import Hero from "../components/Hero";
-import Artist from "../components/Artists";
-import Designers from "../components/Designers";
-import axios from 'axios'
-
-//fetch data from db
-export async function getStaticProps() {
-  // const res = await axios.get("http://localhost:1337/api/qraftstores?populate=*");
-  const res = await axios.get("https://qraftstore.herokuapp.com/api/qraftstores?populate=*");
-  const photos = await res.data.data;
-
-  return {
-    props: { photos },
-  };
-}
+import Store from '../components/Store';
 
 
-export default function Home({ photos }) {
+export default function Home() {
 
   return (
     <>
@@ -26,8 +13,7 @@ export default function Home({ photos }) {
       </Head>
 
       <Hero />
-      <Artist photos={photos} />
-      <Designers photos={photos} />
+      <Store/>
 
     </>
   )
