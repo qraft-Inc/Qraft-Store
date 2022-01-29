@@ -1,6 +1,5 @@
 
 import { ProductBrowser } from '@ecwid/nextjs-ecwid-plugin'
-// import {BuyNowButton} from '@ecwid/nextjs-ecwid-plugin'
 
 export default function Store() {
   return (
