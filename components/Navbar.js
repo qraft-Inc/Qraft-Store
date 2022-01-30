@@ -59,22 +59,22 @@ export default function Navbar() {
           <div className="flex space-x-10 items-center">
             <div className="hidden lg:flex space-x-10">
               <Link href="https://www.qraftstore.com/">
-              {/* <Link href="http://localhost:3000/"> */}
+                {/* <Link href="http://localhost:3000/"> */}
                 <a className="hover:border-b-2 border-blue-400 py-1 ">Home</a>
               </Link>
               <Link href="https://www.qraftstore.com/about">
-              {/* <Link href="http://localhost:3000/about"> */}
-                <a className="hover:border-b-2 border-blue-400 py-1">
-                  About Us
-                </a>
+                {/* <Link href="http://localhost:3000/about"> */}
+                <a className="hover:border-b-2 border-blue-400 py-1">About Us</a>
+              </Link>
+              <Link href="https://www.qraftstore.com/tracks">
+                <a className="hover:border-b-2 border-blue-400 py-1">Trucks</a>
               </Link>
               <Link href="https://www.qraftstore.com/contact">
-              {/* <Link href="http://localhost:3000/contact"> */}
+                {/* <Link href="http://localhost:3000/contact"> */}
                 <a className="hover:border-b-2 border-blue-400 py-1">Contact Us</a></Link>
               <Link href="#">
                 <a className="">
-                  {" "}
-                  <BsFillCartFill size="2rem" />
+                  {/* <BsFillCartFill size="2rem" /> */}
                 </a>
               </Link>
               {!user && (
@@ -146,6 +146,9 @@ export default function Navbar() {
           </Link>
           <Link href="https://www.qraftstore.com/about">
             <a className="border-b">About Us</a>
+          </Link>
+          <Link href="https://www.qraftstore.com/tracks">
+            <a className="border-b">Trucks</a>
           </Link>
           <Link href="https://www.qraftstore.com/contact">
             <a className="border-b">Contact Us</a>
