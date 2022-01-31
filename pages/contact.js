@@ -1,8 +1,5 @@
 import Head from "next/head";
-import Link from "next/link"
-import Image from "next/image"
 import ContactSection from "../components/ContactSection"
-import { MdNavigateNext } from "react-icons/md"
 
 
 export default function Contact() {

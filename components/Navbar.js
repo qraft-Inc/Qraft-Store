@@ -6,7 +6,6 @@ import { AiFillDashboard } from "react-icons/ai";
 import { MdNotifications } from "react-icons/md";
 import { IoIosChatbubbles } from "react-icons/io";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import { BsFillCartFill } from "react-icons/bs";
 
 export default function Navbar() {
   //get loggedIn user

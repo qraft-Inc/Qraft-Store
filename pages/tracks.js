@@ -1,4 +1,3 @@
-import Link from "next/link"
 import Image from "next/image"
 import Head from "next/head";
 import { useUser } from '@auth0/nextjs-auth0';
