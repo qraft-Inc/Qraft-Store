@@ -17,30 +17,30 @@ export default function Footer(){
           </li>
 
           <li className="flex flex-col">
-            <h2 className="text-blue-400 ">Learners</h2>
-            <Link href="/trackdetails"><a className="text-white">Developers</a></Link>
+            <h2 className="text-blue-400 ">Portfolios</h2>
+            <Link href="/trackdetails"><a className="text-white">Gallerists</a></Link>
             <Link href="/trackdetails"><a className="text-white">Visual Artists</a></Link>
-            <Link href="/trackdetails"><a className="text-white">UI/UX Designers</a></Link>
+            <Link href="/trackdetails"><a className="text-white">Designers</a></Link>
           </li>
 
           <li className="flex flex-col">
-            <h2 className="text-blue-400 ">Course Creators</h2>
+            <h2 className="text-blue-400 ">Apprenticeships</h2>
             <Link href="/trackdetails"><a className="text-white">Developers</a></Link>
-            <Link href="/trackdetails"><a className="text-white">Visual Artists</a></Link>
-            <Link href="/trackdetails"><a className="text-white">UI/UX Designers</a></Link>
+            <Link href="/trackdetails"><a className="text-white">Digital Marketers</a></Link>
+            <Link href="/trackdetails"><a className="text-white">UI//UX Designers</a></Link>
           </li>
 
           <li className="flex flex-col">
-            <h2 className="text-blue-400">Small Print</h2>
-            <Link href="/trackdetails"><a className="text-white">Developers</a></Link>
-            <Link href="/trackdetails"><a className="text-white">Visual Artists</a></Link>
-            <Link href="/trackdetails"><a className="text-white">UI/UX Designers</a></Link>
+            <h2 className="text-blue-400">Qraft, Inc.</h2>
+            <Link href="/trackdetails"><a className="text-white">Academy</a></Link>
+            <Link href="/trackdetails"><a className="text-white">Design</a></Link>
+            <Link href="/trackdetails"><a className="text-white">Store</a></Link>
           </li>
 
           <li className="flex flex-col">
-            <h2 className="text-blue-400 ">Account</h2>
+            <h2 className="text-blue-400 ">Night School</h2>
             <Link href="/trackdetails"><a className="text-white">Developers</a></Link>
-            <Link href="/trackdetails"><a className="text-white">Visual Artists</a></Link>
+            <Link href="/trackdetails"><a className="text-white">Digital Marketers</a></Link>
             <Link href="/trackdetails"><a className="text-white">UI/UX Designers</a></Link>
           </li>
 

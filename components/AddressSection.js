@@ -31,7 +31,7 @@ export default function AddressSection() {
                         <a className="mr-4 text-lg flex justify-center items-center">
                             <MdEmail></MdEmail>    
                         </a>
-                        Web : qraftacademy@gmail.com
+                        Web : qraftmind@gmail.com
                     </div>
               </div>
           </div>
