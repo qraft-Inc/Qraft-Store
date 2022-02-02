@@ -55,7 +55,7 @@ export default function Footer(){
 
         </ul>
         <div className="text-center">
-          <span className="block text-white">&copy; 2021 Qraftacademy. All Rights Reserved</span>
+          <span className="block text-white">&copy; 2022 Qraft Store. All Rights Reserved</span>
         </div>
 
     </footer>
