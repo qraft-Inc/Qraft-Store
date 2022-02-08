@@ -66,7 +66,7 @@ export default function Navbar() {
                 <a className="hover:border-b-2 border-blue-400 py-1">About Us</a>
               </Link>
               <Link href="https://www.qraftstore.com/tracks">
-                <a className="hover:border-b-2 border-blue-400 py-1">Trucks</a>
+                <a className="hover:border-b-2 border-blue-400 py-1">Masterclass</a>
               </Link>
               <Link href="https://www.qraftstore.com/contact">
                 {/* <Link href="http://localhost:3000/contact"> */}
@@ -147,7 +147,7 @@ export default function Navbar() {
             <a className="border-b">About Us</a>
           </Link>
           <Link href="https://www.qraftstore.com/tracks">
-            <a className="border-b">Trucks</a>
+            <a className="border-b">Masterclasses</a>
           </Link>
           <Link href="https://www.qraftstore.com/contact">
             <a className="border-b">Contact Us</a>

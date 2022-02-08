@@ -15,14 +15,7 @@ export default function AboutUs() {
                             For You
                         </h3>
                         <p className="mb-3">
-                            Qraftstore is a subsidiary enterprise of Qraft Mind which began in June 2018, Rachel the Founder after graduating from Kyambogo University with a Bachelor&#39;s Degree in
-                            social sciences, she devoted her time to career Development
-                            research and social entrepreneurship, she was inspired to put
-                            the ideas that her, and her friends Carol and Marcella had
-                            dreamed of since University into action, that is, Mindset
-                            transformation. Qraft Mind as a name was inspired from the
-                            concept of Crafting people&#39;s Mindset into better attitude,
-                            values, knowledge and skills.
+                           Home Of Visual Creatives
                         </p>
                         <p className="mb-3">
                             Art and craft is one of the things that spark creativity in ones life so its is very important for people to learn it at any moment in life and we feel everyone has a right to a chance in art
