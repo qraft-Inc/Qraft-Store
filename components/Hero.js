@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
 
           <div className="mx-auto mt-5 md:mt-12 md:max-w-xl md:text-center lg:text-lg mb-12">
-          We have art in store for you !.
+          We have art in store for you !
           </div>
 
         </div>
