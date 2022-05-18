@@ -1,5 +1,5 @@
 
-import Image from 'next/image'
+// import Image from 'next/image'
 
 export default function Hero() {
 
@@ -11,14 +11,13 @@ export default function Hero() {
           <Image
             alt="Background Image"
             src="https://res.cloudinary.com/filipe256/image/upload/v1641984480/qraftstore/landing_hbcigk.jpg"
-          // src= "https://youtu.be/ShWUQbdxfxU"
             layout="fill"
             objectFit="cover"
             quality={100}
           />
         </div> */}
         <div className=" h-full absolute inset-0 top-14 brightness-50">
-        <video >
+        <video autoplay>
         <source
           src="https://youtu.be/ShWUQbdxfxU"
           type="video/mp4"
