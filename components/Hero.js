@@ -10,7 +10,8 @@ export default function Hero() {
         <div className=" h-full absolute inset-0 top-14 brightness-50">
           <Image
             alt="Background Image"
-            src="https://res.cloudinary.com/filipe256/image/upload/v1641984480/qraftstore/landing_hbcigk.jpg"
+            // src="https://res.cloudinary.com/filipe256/image/upload/v1641984480/qraftstore/landing_hbcigk.jpg"
+          src= "https://youtu.be/ShWUQbdxfxU"
             layout="fill"
             objectFit="cover"
             quality={100}
