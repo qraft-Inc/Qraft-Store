@@ -1,6 +1,6 @@
-# 3D Virtual Art 
+# Qraft store is a prototype of an  online marketplace with gigs for independent artists.
 Product Developers :Kalema Arnold and Melody Nsita
 Product Manager :Andrew Tugume
-# Next.js
+# Developed by qraft academy apprentices
 
 
