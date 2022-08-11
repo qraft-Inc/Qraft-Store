@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Hero from "../components/Hero";
+// import Hero from "../components/Hero";
+ import Landing from "../components/Landing";
 import Store from '../components/Store';
 import TabMenu from '../components/TabMenu';
 
@@ -14,13 +15,17 @@ export default function Home() {
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossOrigin="anonymous" />
+          <link rel="stylesheet" href="./style.css" />
+          <meta name="theme-color" content="#fafafa" />
         <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
       </Head>
 
-      <Hero />
-      <Store />
-      <TabMenu />
+      {/* <Hero /> */}
+      <Landing/>
+      {/* <Store /> */}
+      {/* <TabMenu /> */}
 
     </>
   )
