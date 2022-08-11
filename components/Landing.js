@@ -18,7 +18,7 @@ export default function Landing() {
                       </div>
                       <div className="col-lg-10">
                         <div className="input-group mb-3">
-                          <input type="text" className="form-control" placeholder="Book a local artist" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                          <input type="text" className="form-control" placeholder="Find A Local Artist/Find A Local Gig" aria-label="Recipient's username" aria-describedby="basic-addon2" />
                           <i className="fas fa-search" aria-hidden="true" />
                           <div className="input-group-append">
                             <button className="search btn btn-outline-secondary" type="button">Search</button>
@@ -58,7 +58,7 @@ export default function Landing() {
               <div className="row">
                 <div className="col-lg-6">
                   <div className="slider-left">
-                    <h2>Book an independent local artist</h2>
+                    <h2>Book an independent local artist/ Apply For A Local Gig</h2>
                     <div className="input-group mb-3">
                       <input type="text" className="slider-input form-control" placeholder="Try poet " aria-label="Recipient's username" aria-describedby="basic-addon2" />
                       <i className="fas fa-search" aria-hidden="true" />
@@ -76,10 +76,16 @@ export default function Landing() {
                       </ul>
                     </nav>
                   </div>
+                  
+                        <button className="search btn btn-outline-secondary bt" type="button" >Find A Local Artist</button>
+                        <button className="search btn btn-outline-secondary bt" type="button">Find A Local Gig</button>
+                   
                 </div>
+                
+                       
                 <div className="col-lg-6">
+                <img src="back2.png" alt="" />
                   <div className="slider-right">
-                    <img src="back2.png" alt="" />
                     <div className="star">
                       <span><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /><i className="fas fa-star" /></span>
                       <p>Mathew, writer and proofreader</p>
